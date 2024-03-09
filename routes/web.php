@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BiensController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,4 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/annonces', [BiensController::class, 'index']);

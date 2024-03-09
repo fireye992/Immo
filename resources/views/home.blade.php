@@ -13,8 +13,8 @@
         <h1 class="text-3xl">Agence Immobilière</h1>
         <nav>
             <ul class="flex space-x-4">
-                <li><a href="#" class="hover:text-gray-300">Accueil</a></li>
-                <li><a href="#" class="hover:text-gray-300">Annonces</a></li>
+                <li><a href="{{ url('/') }}" class="hover:text-gray-300">Accueil</a></li>
+                <li><a href="{{ url('/annonces') }}" class="hover:text-gray-300">Annonces</a></li>
                 <li><a href="#" class="hover:text-gray-300">Contact</a></li>
             </ul>
         </nav>
@@ -32,7 +32,7 @@
 </div>
 
 <footer class="bg-gray-800 text-white p-4 text-center">
-    <p>&copy; 2024 Agence Immobilière. Tous droits réservés.</p>
+    <p>&copy; 2024 - Fenril992</p>
 </footer>
 
 </body>
