@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Bien; 
+use App\Models\Bien;
 
 class BiensController extends Controller
 {
