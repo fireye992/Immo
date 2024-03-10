@@ -1,18 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-
-<div class="container mx-auto px-4">
-    <h1 class="text-2xl font-bold my-4">Nos Annonces</h1>
-    <div class="grid grid-cols-3 gap-4">
+<div class="container p-6 mx-auto">
+    <h2 class="mb-6 text-2xl font-bold">Nos Annonces</h2>
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         @foreach ($biens as $bien)
-        <div class="border rounded shadow p-4">
-            <h2 class="text-xl font-bold">{{ $bien->titre }}</h2>
-            <img src="{{ $bien->image_path }}" alt="Photo du bien" class="w-full h-48 object-cover my-2">
-            <p>{{ Str::limit($bien->description, 150) }}</p>
-            <p class="text-lg font-semibold my-2">{{ number_format($bien->prix, 2, ',', ' ') }} €</p>
-            <a href="#" class="text-blue-600 hover:text-blue-800">Voir plus</a>
-        </div>
+            <div class="max-w-sm overflow-hidden bg-white rounded shadow-lg">
+                <img class="w-full" src="{{ asset($bien->image_path) }}" alt="Image du bien">
+                <div class="px-6 py-4">
+                    <div class="mb-2 text-xl font-bold">{{ $bien->titre }}</div>
+                    <p class="text-base text-gray-700">
+                        {{ $bien->description }}
+                    </p>
+                </div>
+                <div class="px-6 py-4">
+                    {{ number_format($bien->prix, 0, ',', ' ') }} €
+                </div>
+            </div>
         @endforeach
     </div>
 </div>
