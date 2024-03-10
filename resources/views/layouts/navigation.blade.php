@@ -9,7 +9,6 @@
                         <x-application-logo class="block w-auto text-gray-800 fill-current h-9 dark:text-gray-200" />
                     </a>
                 </div>
-
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
@@ -17,11 +16,13 @@
                     </x-nav-link>
                 </div>
             </div>
-            <ul class="flex items-center shrink-0">
-                <li><a href="{{ url('/') }} "class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-gray-400 dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none">Accueil</a></li>
-                <li><a href="{{ url('/annonces') }}" class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-gray-400 dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none">Annonces</a></li>
-                <li><a href="{{ url('/contact')}}" class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-gray-400 dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none">Contact</a></li>
-            </ul>
+               <!-- Navtest -->
+                <ul class="flex items-center shrink-0">
+                    <li><a href="{{ url('/') }} "class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-gray-400 dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none">Accueil</a></li>
+                    <li><a href="{{ url('/annonces') }}" class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-gray-400 dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none">Annonces</a></li>
+                    <li><a href="{{ url('/contact')}}" class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-gray-400 dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none">Contact</a></li>
+                </ul>
+
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
@@ -57,6 +58,14 @@
                         </form>
                     </x-slot>
                 </x-dropdown>
+                    <!-- Switchtheme -->
+                    <div class="form-switch">
+                        <input type="checkbox" id="theme-toggle" class="sr-only" />
+                        <label class="relative inline-block w-12 h-6 bg-gray-200 rounded-full cursor-pointer dark:bg-gray-600" for="theme-toggle">
+                            <span class="sr-only">Changer le mode d'affichage</span>
+                            <span class="absolute top-0 bottom-0 left-0 w-6 h-6 m-px transition-transform duration-200 ease-in-out transform bg-white rounded-full shadow-lg dark:bg-gray-300" id="theme-toggle-handle"></span>
+                        </label>
+                    </div>
             </div>
 
             <!-- Hamburger -->

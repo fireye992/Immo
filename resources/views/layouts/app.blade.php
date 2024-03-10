@@ -17,8 +17,8 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            <div>{{ Auth::user() ? Auth::user()->name : 'Invité' }}</div>
+        <div class="text-gray-900 bg-white dark:bg-gray-800 dark:text-white">
+            {{-- <div>{{ Auth::user() ? Auth::user()->name : 'Invité' }}</div> --}}
 
             @include('layouts.navigation')
 
@@ -37,5 +37,29 @@
                 @yield('contact')
             </main>
         </div>
+        <script>
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeToggleHandle = document.getElementById('theme-toggle-handle');
+            let isDarkMode = localStorage.getItem('theme') === 'dark';
+
+            updateTheme();
+
+            themeToggle.addEventListener('click', () => {
+            isDarkMode = !isDarkMode;
+            console.log('Is dark mode:', isDarkMode); // Ajouté pour le débogage
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            updateTheme();
+        });
+
+            function updateTheme() {
+                if (isDarkMode) {
+                    document.documentElement.classList.add('dark');
+                    themeToggleHandle.style.transform = 'translateX(100%)';
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    themeToggleHandle.style.transform = 'translateX(0)';
+                }
+            }
+        </script>
     </body>
 </html>
